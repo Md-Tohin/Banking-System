@@ -13,7 +13,7 @@ class DepositController extends Controller
     //  list
     public function index()
     {
-        $data['all_data'] = Deposit::orderBy('id', 'desc')->get();
+        $data['all_data'] = Deposit::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->get();
         return view('backend.deposit.index', $data);
     }
 

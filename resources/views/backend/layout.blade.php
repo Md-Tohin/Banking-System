@@ -97,6 +97,36 @@
     <script src="/assets/backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- toastr -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script>
+        @if (Session::has('message'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.success("{{ session('message') }}");
+        @endif
+        @if (Session::has('error'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.error("{{ session('error') }}");
+        @endif
+        @if (Session::has('info'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.info("{{ session('info') }}");
+        @endif
+        @if (Session::has('warning'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.warning("{{ session('warning') }}");
+        @endif
+    </script>
     <!-- DataTables  & Plugins -->
     <script src="/assets/backend/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="/assets/backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>

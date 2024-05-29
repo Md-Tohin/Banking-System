@@ -132,6 +132,7 @@
 @section('scripts')
     <script>
         $(document).ready(function() {
+            //  add deposit 
             $('#add_deposit_form').on('submit', function(e) {
                 e.preventDefault();
                 $('#add_deposit_button').text('Submitting...');

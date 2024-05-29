@@ -23,22 +23,22 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <!-- Dashboard -->
-                <li class="nav-item menu-open">
+                <li class="nav-item">
                     <a href="{{ route('dashboard') }}" class="nav-link @yield('dashboard')">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p> Dashboard </p>
                     </a>
                 </li>
                 <!-- Deposit -->
-                <li class="nav-item menu-open">
+                <li class="nav-item">
                     <a href="{{ route('deposit.list') }}" class="nav-link @yield('deposit')">
                         <i class="nav-icon far fa-plus-square"></i>
                         <p> Deposit </p>
                     </a>
                 </li>
                 <!-- Withdrawal -->
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <li class="nav-item @yield('withdrawal')">
+                    <a href="#" class="nav-link @yield('withdrawal-menu')">
                         <i class="nav-icon fas fa-chart-pie"></i>
                         <p>
                             Withdrawal
@@ -47,13 +47,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/charts/chartjs.html" class="nav-link">
+                            <a href="{{ route('withdrawal.add') }}" class="nav-link @yield('withdrawal-add')">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Withdrawal</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
+                            <a href="{{ route('withdrawal.list') }}" class="nav-link @yield('withdrawal-list')">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Withdrawal List</p>
                             </a>
