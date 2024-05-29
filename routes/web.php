@@ -4,14 +4,12 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\WithdrawalController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -20,6 +18,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::group(['middleware' => ['auth', 'verified']], function(){
+    //  Dashboard Routes
+    Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     //  Deposit Routes
     Route::prefix('deposit')->group(function () {
         Route::get('list', [DepositController::class, 'index'])->name('deposit.list');

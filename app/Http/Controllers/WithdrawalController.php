@@ -22,8 +22,8 @@ class WithdrawalController extends Controller
         $currentMonth = Carbon::now()->format('F');
         $currentYear = Carbon::now()->year;
 
-        $countWithdrawal = Withdrawal::where('year',$currentYear)->where('month', $currentMonth)->count();
-        $today_withdrawal_amount = Withdrawal::where('date',Carbon::now()->format('d F Y'))->sum('amount');
+        $countWithdrawal = Withdrawal::where('user_id', Auth::user()->id)->where('year',$currentYear)->where('month', $currentMonth)->count();
+        $today_withdrawal_amount = Withdrawal::where('user_id', Auth::user()->id)->where('date',Carbon::now()->format('d F Y'))->sum('amount');
         $balance_amount = Withdrawal::getBalanceAmount();
 
         if ($countWithdrawal > 3) {
