@@ -107,9 +107,9 @@ This system provides a robust platform for handling deposits and withdrawals in 
 3. **Withdrawal History: Navigate to /withdrawal/list and see the withdrawal history.**
 
 ## Developed By
-<a href="https://mdtohin.bdshopexpress.com" target="_blank"><img src="https://mdtohin.bdshopexpress.com/assets/frontend/images/hero.jpg" width="90" height="120" alt="Md. Tohin"></a>
+<a href="https://mdtohin.bdshopexpress.com" target="_blank"><img src="https://mdtohin.bdshopexpress.com/assets/frontend/images/hero.jpg" width="90" height="100" alt="Md. Tohin"></a>
 
-<p align="center">Md. Tohin</p>
+<p>Md. Tohin</p>
 
 
 ### Thank You
