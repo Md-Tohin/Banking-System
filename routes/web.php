@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DepositController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -15,6 +16,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::group(['middleware' => ['auth', 'verified']], function(){
+    //  Deposit Routes
+    Route::prefix('deposit')->group(function () {
+        Route::get('list', [DepositController::class, 'index'])->name('deposit.list');
+        Route::post('add', [DepositController::class, 'store'])->name('deposit.store');
+    });
+    //  Deposit Routes
+    Route::prefix('deposit')->group(function () {
+        Route::get('list', [DepositController::class, 'index'])->name('deposit.list');
+        Route::post('add', [DepositController::class, 'store'])->name('deposit.store');
+    });
 });
 
 require __DIR__.'/auth.php';

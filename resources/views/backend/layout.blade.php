@@ -11,6 +11,8 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/assets/backend/plugins/fontawesome-free/css/all.min.css">
+    <!-- toastr -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
@@ -20,6 +22,12 @@
     <link rel="stylesheet" href="/assets/backend/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- JQVMap -->
     <link rel="stylesheet" href="/assets/backend/plugins/jqvmap/jqvmap.min.css">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/assets/backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/backend/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/backend/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
     <!-- Theme style -->
     <link rel="stylesheet" href="/assets/backend/dist/css/adminlte.min.css">
     <!-- overlayScrollbars -->
@@ -87,12 +95,51 @@
     <script src="/assets/backend/plugins/summernote/summernote-bs4.min.js"></script>
     <!-- overlayScrollbars -->
     <script src="/assets/backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- toastr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="/assets/backend/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/assets/backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/assets/backend/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/assets/backend/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="/assets/backend/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/assets/backend/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="/assets/backend/plugins/jszip/jszip.min.js"></script>
+    <script src="/assets/backend/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="/assets/backend/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="/assets/backend/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="/assets/backend/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="/assets/backend/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
     <!-- AdminLTE App -->
     <script src="/assets/backend/dist/js/adminlte.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="/assets/backend/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="/assets/backend/dist/js/pages/dashboard.js"></script>
+
+    @yield('scripts')
+
+    <!-- DataTables Script -->
+    <script>
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
 </body>
 
 </html>
