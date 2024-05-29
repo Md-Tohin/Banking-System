@@ -38,7 +38,7 @@ class WithdrawalController extends Controller
     //  store
     public function store(Request $request)
     {
-        $today_withdrawal_amount = Withdrawal::where('date',Carbon::now()->format('d F Y'))->sum('amount');
+        $today_withdrawal_amount = Withdrawal::where('user_id', Auth::user()->id)->where('date',Carbon::now()->format('d F Y'))->sum('amount');
         if (($today_withdrawal_amount + $request->amount) > 3000) {
             return redirect()->back()->with('error', 'You can not withdraw more than 3000');
         }
