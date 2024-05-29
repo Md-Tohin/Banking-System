@@ -36,6 +36,8 @@
     <link rel="stylesheet" href="/assets/backend/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="/assets/backend/plugins/summernote/summernote-bs4.min.css">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="/assets/backend/dist/css/custom.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -43,8 +45,15 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="/assets/backend/dist/img/AdminLTELogo.png" alt="AdminLTELogo"
-                height="60" width="60">
+            <div class="loader">
+                <div class="loader-square"></div>
+                <div class="loader-square"></div>
+                <div class="loader-square"></div>
+                <div class="loader-square"></div>
+                <div class="loader-square"></div>
+                <div class="loader-square"></div>
+                <div class="loader-square"></div>
+            </div>
         </div>
 
         @include('backend.includes.header')
