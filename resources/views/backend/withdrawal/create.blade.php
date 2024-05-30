@@ -185,6 +185,7 @@
                 }
 
                 //  check balance amount
+                calculateGrandTotal();
                 if (grand_total_amount > balance_amount) {
                     $("#deposit-error-message").removeClass('d-none');
                     $("#withdrawal-button").attr('disabled', 'disabled');
