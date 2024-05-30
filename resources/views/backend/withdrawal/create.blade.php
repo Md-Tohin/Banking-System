@@ -64,7 +64,7 @@
                                             class="form-control @error('wd_number') is-invalid @enderror" id="wd_number"
                                             placeholder="Enter withdrawal number">
                                         @error('wd_number')
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="invalid-feedback" id="wd_number_error" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
