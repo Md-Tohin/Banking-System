@@ -185,7 +185,7 @@
                 }
 
                 //  check balance amount
-                if (amount > balance_amount) {
+                if (grand_total_amount > balance_amount) {
                     $("#deposit-error-message").removeClass('d-none');
                     $("#withdrawal-button").attr('disabled', 'disabled');
                     $("#deposit-error-message").html(`
@@ -198,7 +198,7 @@
                 }
 
                 //  disable or enable submit button
-                if ((today_withdrawal_amount + parseFloat(amount)) > 3000 || amount > balance_amount) {
+                if ((today_withdrawal_amount + parseFloat(amount)) > 3000 || grand_total_amount > balance_amount) {
                     $("#withdrawal-button").attr('disabled', 'disabled');
                 } else {
                     $("#withdrawal-button").removeAttr('disabled');
@@ -239,6 +239,8 @@
             }
 
             $('#vat').val(vat);
+
+            
 
         });
     </script>

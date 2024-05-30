@@ -42,7 +42,7 @@ class WithdrawalController extends Controller
             return redirect()->back()->with('error', 'You can not withdraw more than 3000');
         }
         $balance_amount = Withdrawal::getBalanceAmount();
-        if ($balance_amount < $request->amount) {
+        if ($balance_amount < $request->grand_total) {
             return redirect()->back()->with('error', 'You can not withdraw more than your balance amount');
         }
         $request->validate([
